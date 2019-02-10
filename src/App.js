@@ -1,10 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
-import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import BusinessForm from './components/BusinessForm'
@@ -41,6 +39,7 @@ class App extends Component {
     this.validateField = this.validateField.bind(this);
   }
 
+// Save the input changed into the state
   handleInput(e){
     const {value,name} = e.target;
 
@@ -52,14 +51,14 @@ class App extends Component {
     }))
   }
 
+//Send the request to the loan service
   handleRequest(e){
-
     const error = this.validateField();
     this.setState({
       alert: error
     })
 
-    if(error == ''){
+    if(error === ''){
       fetch(__LOANSERVICE__, {
         method: 'POST',
         headers: {
@@ -84,11 +83,13 @@ class App extends Component {
 
   }
 
+//Validate if the fields are not empty
   validateField(data){
     var error = [];
     Object.keys(this.state.inputs).map((keyname, i) => {
-      if(this.state.inputs[keyname] == ''){
+      if(this.state.inputs[keyname] === ''){
         error.push('The field '+ keyname + ' cannot be empty. \n');
+        return true;
       }
     });
     if( error.length > 0){

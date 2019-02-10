@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 class BusinessForm extends Component{
 
-  constructor(){
-    super();
-  }
-
-
-
   render(){
     return(
       <div className="col-md-12" onSubmit={this.handleSubmit}>
