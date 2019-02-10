@@ -8,12 +8,12 @@ class OwnerForm extends Component{
 
   render(){
     return(
-      <form className="col-md-12" onSubmit={this.handleSubmit}>
+      <div className="col-md-12" onSubmit={this.handleSubmit}>
         <div className="form-group">
           <input
             type="number"
             name="social_security_number"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
             className="form-control"
             placeholder="Social Security"
             min="1"
@@ -25,7 +25,7 @@ class OwnerForm extends Component{
             name="owner_name"
             className="form-control"
             placeholder="Name"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -34,7 +34,7 @@ class OwnerForm extends Component{
             name="owner_email"
             className="form-control"
             placeholder="Email"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -43,7 +43,7 @@ class OwnerForm extends Component{
             name="owner_address"
             className="form-control"
             placeholder="Address"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -52,7 +52,7 @@ class OwnerForm extends Component{
             name="owner_city"
             className="form-control"
             placeholder="City"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -61,24 +61,20 @@ class OwnerForm extends Component{
             name="owner_state"
             className="form-control"
             placeholder="State"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
           <input
             type="number"
-            name="business_postal_code"
+            name="owner_postal_code"
             className="form-control"
             placeholder="Postal Code"
             min="1"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
-
-        <button type="submit">
-          Create
-        </button>
-      </form>
+      </div>
     )
   }
 

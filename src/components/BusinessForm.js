@@ -6,14 +6,16 @@ class BusinessForm extends Component{
     super();
   }
 
+
+
   render(){
     return(
-      <form className="col-md-12" onSubmit={this.handleSubmit}>
+      <div className="col-md-12" onSubmit={this.handleSubmit}>
         <div className="form-group">
           <input
             type="number"
             name="tax_id"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
             className="form-control"
             placeholder="Tax Id"
             min="1"
@@ -25,7 +27,7 @@ class BusinessForm extends Component{
             name="business_name"
             className="form-control"
             placeholder="Business name"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -34,7 +36,7 @@ class BusinessForm extends Component{
             name="business_address"
             className="form-control"
             placeholder="Address"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -43,7 +45,7 @@ class BusinessForm extends Component{
             name="business_city"
             className="form-control"
             placeholder="City"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -52,7 +54,7 @@ class BusinessForm extends Component{
             name="business_state"
             className="form-control"
             placeholder="State"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -62,7 +64,7 @@ class BusinessForm extends Component{
             className="form-control"
             placeholder="Postal Code"
             min="1"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
@@ -72,25 +74,21 @@ class BusinessForm extends Component{
             className="form-control"
             placeholder="Loan request"
             min="1"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           />
         </div>
         <div className="form-group">
           <select
             name="priority"
             className="form-control"
-            onChange={this.handleInput}
+            onChange={this.props.onChangeInput}
           >
             <option>low</option>
             <option>medium</option>
             <option>high</option>
           </select>
         </div>
-
-        <button type="submit">
-          Create
-        </button>
-      </form>
+      </div>
     )
   }
 
